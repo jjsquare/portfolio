@@ -1,0 +1,288 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+    background-color: #F4F6F6; /* Off-white for the main background */
+    color: #2E4053; /* Slate gray for text */
+}
+
+/* Header Section */
+header.hero-section {
+    background-color: #1C2833; /* Deep navy background */
+    color: #F4F6F6; /* Off-white text */
+    padding: 3rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+header .cta-btn {
+    background: #AAB7B8; /* Silver button */
+    color: #1C2833; /* Deep navy text */
+    padding: 0.7rem 1.2rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .cta-btn:hover {
+    background: #2E4053; /* Slate gray on hover */
+    color: #F4F6F6; /* Off-white text */
+    transform: scale(1.1);
+}
+
+/* Section Styles */
+.section {
+    padding: 2.5rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    background-color: #FFFFFF; /* Pure white background for sections */
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(50px);
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Skills and Projects */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-card, .project-card {
+    background: #D5DBDB; /* Light gray for cards */
+    color: #1C2833; /* Deep navy text */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover, .project-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Timeline Items */
+.timeline-item {
+    background: #AAB7B8; /* Silver for timeline */
+    color: #1C2833; /* Deep navy text */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 1rem;
+}
+
+#contact p a {
+    color: #1C2833; /* Deep navy links */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#contact p a:hover {
+    color: #2E4053; /* Slate gray on hover */
+}
+
+/* Footer */
+footer {
+    background-color: #1C2833; /* Deep navy */
+    color: #F4F6F6; /* Off-white text */
+    text-align: center;
+    padding: 1.2rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+/* Navigation */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #1C2833;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    color: #F4F6F6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    font-size: 1rem;
+}
+
+.navbar a {
+    color: #F4F6F6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #AAB7B8;
+}
+
+#dark-mode-toggle {
+    background: #AAB7B8;
+    color: #1C2833;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    background: #2E4053;
+    color: #F4F6F6;
+}
+
+/* Hero Typewriter Effect */
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #F4F6F6;
+    animation: typing 3s steps(40, end), blink 0.6s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #F4F6F6;
+    }
+}
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1C2833; /* Deep navy for dark background */
+    color: #F4F6F6; /* Off-white text for contrast */
+}
+
+body.dark-mode header.hero-section {
+    background-color: #F4F6F6; /* Off-white for dark mode */
+    color: #1C2833; /* Deep navy text */
+}
+
+body.dark-mode .section {
+    background-color: #2E4053; /* Slate gray for sections */
+    color: #F4F6F6; /* Off-white text */
+}
+
+body.dark-mode .skill-card, 
+body.dark-mode .project-card, 
+body.dark-mode .timeline-item {
+    background: #1C2833; /* Darker gray for cards */
+    color: #F4F6F6; /* Off-white text */
+}
+
+body.dark-mode .cta-btn {
+    background: #F4F6F6; /* Off-white button */
+    color: #1C2833; /* Deep navy text */
+}
+
+body.dark-mode .cta-btn:hover {
+    background: #AAB7B8; /* Silver on hover */
+    color: #1C2833; /* Deep navy text */
+}
+
+body.dark-mode .navbar {
+    background: #2E4053; /* Slate gray for navbar */
+    color: #F4F6F6; /* Off-white text */
+}
+
+body.dark-mode .navbar a {
+    color: #F4F6F6; /* Off-white links */
+}
+
+body.dark-mode .navbar a:hover {
+    color: #AAB7B8; /* Silver hover links */
+}
+
+body.dark-mode #dark-mode-toggle {
+    background: #F4F6F6; /* Off-white button */
+    color: #1C2833; /* Deep navy text */
+}
+
+body.dark-mode #dark-mode-toggle:hover {
+    background: #AAB7B8; /* Silver on hover */
+    color: #1C2833; /* Deep navy text */
+}
+
+body.dark-mode footer {
+    background-color: #2E4053; /* Slate gray for footer */
+    color: #F4F6F6; /* Off-white text */
+}
