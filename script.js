@@ -36,10 +36,48 @@ document.addEventListener("DOMContentLoaded", () => {
             localStorage.setItem("theme", "dark-mode");
         }
     });
-    
-    window.addEventListener("scroll", activateSections);
+    const matrixEffect = document.getElementById("matrix-effect");
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()";
+    const numberOfColumns = Math.floor(window.innerWidth / 20); // Adjust column width
+    const numberOfRows = Math.floor(window.innerHeight / 20); // Adjust row height
+
+    const generateMatrixEffect = () => {
+        // Create multiple characters falling in columns
+        for (let i = 0; i < numberOfColumns; i++) {
+            // Random initial Y position for each column
+            let yPosition = Math.floor(Math.random() * window.innerHeight);
+
+            // Create a series of characters for each column
+            setInterval(() => {
+                // Generate a random character from the list
+                const char = characters[Math.floor(Math.random() * characters.length)];
+                const charElement = document.createElement("div");
+                charElement.classList.add("matrix-char");
+                matrixEffect.appendChild(charElement);
+
+                // Set the position of the falling character
+                charElement.style.left = `${i * 20}px`; // Spread out each column
+                charElement.style.top = `${yPosition}px`;
+
+                // Make the character fall by increasing its Y position
+                charElement.innerText = char;
+
+                // Increase the position for the next character
+                yPosition += 20;
+
+                // If it goes out of the screen, reset the position
+                if (yPosition > window.innerHeight) {
+                    yPosition = 0;
+                }
+            }, Math.random() * 100 + 50); // Randomize the falling speed per character
+        }
+    };
+
+    generateMatrixEffect();
 
     activateSections(); // Initial check on page load
+    // generateMatrixEffect();
+
 });
 
 
